@@ -1,3 +1,4 @@
+/* hello test */
 body {
     background-color: rgb(252, 156, 172);
     text-align: center;
@@ -6,19 +7,23 @@ body {
     padding: 0;
 }
 
+/* Header style */
 h1 {
     color: rgb(136, 27, 78);
     margin-left: 20px;
 }
 
+
 .sticker {
     width: 50px;
 }
+
 
 .decor {
     width: 120px;
     margin: 0 5px; 
 }
+
 
 h2 {
     margin-top: 30px;
