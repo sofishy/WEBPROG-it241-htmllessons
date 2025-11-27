@@ -32,4 +32,20 @@ h2 {
 
 p {
     margin-bottom: 20px;
+
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(252, 156, 172);
+}
+
+.container div {
+  background-color: rgb(136, 27, 78);
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;  
+  font-size: 30px;
+}
+
 }
