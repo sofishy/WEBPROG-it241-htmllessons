@@ -34,12 +34,12 @@ p {
  .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgb(252, 156, 172);
+  background-color: rgb(136, 27, 78);
   padding: 5px;
   gap: 5px;
 }
 .container div {
-  background-color: rgb(136, 27, 78);
+  background-color: rgb(252, 156, 172);
   color: #000;
   padding: 10px;
   font-size: 30px;
