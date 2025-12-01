@@ -1,4 +1,4 @@
-/* Page basics */
+/* try again */
 body {
     background-color: rgb(252, 156, 172);
     text-align: center;
@@ -10,11 +10,19 @@ body {
 /* Header */
 h1 {
     color: rgb(136, 27, 78);
-    margin: 20px 0;
-    font-size: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: white;
+    padding: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 2px solid rgb(136, 27, 78);
 }
 
-/* Small header images */
 .sticker {
     width: 50px;
 }
@@ -22,45 +30,54 @@ h1 {
 /* Decorative GIFs */
 .decor {
     width: 120px;
-    margin: 5px;
+    margin: 10px;
+    border: 2px solid rgb(136, 27, 78);
+    border-radius: 10px;
 }
 
 /* Section titles */
 h2 {
-    margin-top: 30px;
-    margin-bottom: 10px;
     color: rgb(136, 27, 78);
+    margin-top: 30px;
+    font-size: 24px;
+    text-decoration: underline;
 }
 
-/* Paragraph style */
+/* Paragraphs */
 p {
-    font-size: 18px;
-    margin: 10px auto 20px auto;
-    width: 70%;
-}
-
-/* Profile picture */
-img[src="stewie.png"] {
+    background-color: white;
+    padding: 15px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
     border-radius: 10px;
-    margin-top: 10px;
+    border: 2px solid rgb(136, 27, 78);
+    font-size: 17px;
 }
 
-/* Simple 3-column grid */
+/* Picture */
+img[src="stewie.png"] {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 2px solid rgb(136, 27, 78);
+}
+
+/* Grid container */
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgb(136, 27, 78);
-    padding: 10px;
-    gap: 10px;
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
+    gap: 10px;
 }
 
 /* Grid boxes */
 .container div {
-    background-color: rgb(252, 156, 172);
-    color: black;
-    padding: 15px;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid rgb(136, 27, 78);
+    border-radius: 10px;
     font-size: 24px;
-    border: 1px solid black; /* beginner style */
 }
