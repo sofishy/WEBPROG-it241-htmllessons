@@ -5,7 +5,14 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 17px;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(252, 156, 172);
+  text-align: center;
 }
+
+.sticker { width: 50px; }
+.decor { width: 120px; margin: 0 5px; }
 
 /* Grid layout */
 .grid-container {
@@ -13,7 +20,7 @@ body {
   grid-template-areas:
     'header'
     'menu'
-    'main'
+    'content'
     'facts'
     'footer';
   gap: 10px;
@@ -56,7 +63,9 @@ body {
 }
 
 .content {
-  grid-area: main;
+  grid-area: content;
+  text-align: left;
+  padding: 0 10px;
 }
 
 .content h2 {
