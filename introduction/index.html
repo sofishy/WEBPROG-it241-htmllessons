@@ -9,39 +9,98 @@
 </head>
 <body> 
 
-<h1>My Personal Profile Web Page - Iane Sofia Francheska Padua</h1>
-<p>
+ <style>
+  body {
+    background-color: rgb(252, 156, 172);
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
 
-About Me, Myself, and I<br>
-( Do not include birthdate / age / contact information) <br>
-Education / Achievements<br>
-Course <br>
-IT Experience<br>
-Hobbies & Interests<br>
-Goals In Life / Dream<br>
-Picture Gallery<br>
- <img src="stewie.png" width="500" height="600">
-</p>
+  h1 {
+    color: rgb(136, 27, 78);
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 
-<div class="container-fluid mt-3">
-<h1>Responsive Auto Layout Columns</h1>
-<p>In Bootstrap 5, there is an easy way to create equal width columns: just use the <code>.col-md</code> class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.</p>
-<p>If the screen size is <strong>less than 768px</strong>, the columns will stack horizontally.</p>
-<div class="container-fluid">
-<div class="row">
-<div class="col-md bg-primary text-white">1 of 2</div>
-<div class="col-md bg-dark text-white">2 of 2</div>
-</div>  
-</div>
-<br>
-<div class="container-fluid">
-<div class="row">
-<div class="col-md bg-primary text-white">1 of 4</div>
-<div class="col-md bg-dark text-white">2 of 4</div>
-<div class="col-md bg-primary text-white">3 of 4</div>
-<div class="col-md bg-dark text-white">4 of 4</div>
-</div>  
-</div>
+  .sticker {
+    width: 60px;
+    vertical-align: middle;
+  }
+
+  .section-box {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+  }
+
+  .section-title {
+    color: rgb(136, 27, 78);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+
+</head>
+<body>
+
+<h1>
+  <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
+  My Personal Profile Web Page - Iane Sofia Francheska Padua
+  <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
+</h1>
+ 
+<div class="container">
+
+  <div class="section-box">
+    <div class="section-title">About Me</div>
+    <p>Hi! I'm Iane Sofia Francheska Padua. I'm a student from BSIT241.</p>
+  </div>
+
+  <div class="section-box">
+    <div class="section-title">Education / Achievements</div>
+    <p>
+      Graduated from Pasay City South High School<br>
+      Graduated with High Honors<br>
+      Top 4 Best Capstone Project<br>
+      Best Research Group in Physical Science
+    </p>
+  </div>
+
+  <div class="section-box">
+    <div class="section-title">Course</div>
+    <p>Bachelor of Science in Information Technology</p>
+  </div>
+
+  <div class="section-box">
+    <div class="section-title">IT Experience</div>
+    <p>
+      Python programming<br>
+      Basic networking<br>
+      UI/UX designing
+    </p>
+  </div>
+
+  <div class="section-box">
+    <div class="section-title">Hobbies & Interests</div>
+    <p>
+      Watching sitcoms/drama<br>
+      Playing instruments<br>
+      Crocheting
+    </p>
+  </div>
+
+  <div class="section-box">
+    <div class="section-title">Goals In Life / Dream</div>
+    <p>My dream is to become successful in the IT field and build a stable future.</p>
+  </div>
+
+  <div class="section-box">
+    <div class="section-title">Picture Gallery</div>
+    <img src="stewie.png" width="250">
+  </div>
+
 </div>
 
 </body>
