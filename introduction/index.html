@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Profile Web Page</title>
-<link rel="stylesheet" href="css/css-grid.css">
+    <meta charset="UTF-8">
+    <title>Profile Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css-grid.css">
 </head>
 <body>
 
+<nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#guestbook">Guestbook</a>
+    <a href="resources.html">Resources</a>
+</nav>
+
 <h1>
-    <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
+    <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
     Profile Web Page
-    <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
+    <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
 </h1>
 
-<!-- two identical decorative GIFs -->
-<img class="decor" src="https://supplies.ju.mp/assets/images/gallery05/a1c6c4c1.gif?v=1c1ba870">
-<img class="decor" src="https://supplies.ju.mp/assets/images/gallery05/a1c6c4c1.gif?v=1c1ba870">
+<img class="decor" src="https://supplies.ju.mp/assets/images/gallery05/a1c6c4c1.gif?v=1c1ba870" alt="decor">
+<img class="decor" src="https://supplies.ju.mp/assets/images/gallery05/a1c6c4c1.gif?v=1c1ba870" alt="decor">
 
-<h2>About Me</h2>
-<p>Hi! I'm Nairb Ackillis Varona handsome. I'm a student from BSIT241.</p>
+<h2 id="about">About Me</h2>
+<p>Hi! I'm Iane Sofia Francheska Padua. I'm a student from BSIT241.</p>
 
 <h2>Education / Achievements</h2>
 <p>
@@ -47,19 +55,61 @@ Crocheting
 <h2>Goals In Life / Dream</h2>
 <p>My dream is to become successful in the IT field and build a stable future.</p>
 
-<h2>Picture Gallery</h2>
-<img src="stewie.png" width="250">
-
-</p>
-
-<div class="container">
-<div>1</div>
-<div>2</div>
-<div>3</div>  
-<div>4</div>
-<div>5</div>
-<div>6</div>  
+<h2 id="gallery">Picture Gallery</h2>
+<div id="galleryApp" class="container">
+    <img v-for="image in images" :src="image" class="gallery-img" alt="gallery image">
 </div>
+
+<h2 id="guestbook">Guestbook</h2>
+<div id="guestbookApp" class="guestbook">
+    <input v-model="name" placeholder="Your name">
+    <input v-model="comment" placeholder="Your comment">
+    <button @click="addComment">Submit</button>
+
+    <ul>
+        <li v-for="entry in entries">
+            <strong>{{ entry.name }}</strong>: {{ entry.comment }}
+        </li>
+    </ul>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+Vue.createApp({
+    data() {
+        return {
+            images: [
+                'images/stewie.png',
+                'images/stewie.png',
+                'images/stewie.png'
+            ]
+        }
+    }
+}).mount('#galleryApp')
+
+Vue.createApp({
+    data() {
+        return {
+            name: '',
+            comment: '',
+            entries: []
+        }
+    },
+    methods: {
+        addComment() {
+            if (this.name && this.comment) {
+                this.entries.push({
+                    name: this.name,
+                    comment: this.comment
+                })
+                this.name = ''
+                this.comment = ''
+            }
+        }
+    }
+}).mount('#guestbookApp')
+</script>
 
 </body>
 </html>
