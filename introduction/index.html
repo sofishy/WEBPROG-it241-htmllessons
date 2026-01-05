@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/css-grid.css">
 
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
@@ -24,12 +24,14 @@
 <!-- HOME SECTION -->
 <section id="home" class="home">
     <div class="home-card">
+
         <div class="welcome-text">
             <h1>
-                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sparkle">
+                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
                 My Profile
-                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sparkle">
+                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
             </h1>
+
             <p class="tagline">
                 Welcome to my personal profile website.
             </p>
@@ -41,6 +43,7 @@
             <button onclick="goToSection('guestbook')">Guestbook</button>
             <button onclick="location.href='resources.html'">Resources</button>
         </div>
+
     </div>
 </section>
 
@@ -82,7 +85,7 @@
     <h2>Picture Gallery</h2>
 
     <div id="gallery-app" class="container">
-        <img v-for="img in images" :src="'images/' + img" class="gallery-img" :alt="'Profile image: ' + img">
+        <img v-for="img in images" :src="'images/' + img" class="gallery-img" :alt="'Profile image'">
     </div>
 </section>
 
@@ -93,11 +96,12 @@
     <div id="guestbook-app" class="guestbook">
         <input type="text" v-model="name" placeholder="Your name">
         <input type="text" v-model="message" placeholder="Your message">
+        <br><br>
         <button @click="addEntry">Submit</button>
 
-        <div v-for="entry in entries" :key="entry.name">
-            <p><strong>{{ entry.name }}:</strong> {{ entry.message }}</p>
-        </div>
+        <p v-for="entry in entries">
+            <strong>{{ entry.name }}:</strong> {{ entry.message }}
+        </p>
     </div>
 </section>
 

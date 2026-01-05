@@ -14,33 +14,31 @@ body {
 /* ---------------- FLOATING NAV ---------------- */
 .floating-nav {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 12px;
     border-radius: 20px;
-    background: linear-gradient(135deg, #f3d6c6, #f8b8c8);
+    background: #f3d6c6;
     border: 2px solid #d2b8a3;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .floating-nav button {
-    background: linear-gradient(135deg, #e89bb0, #f4a6b8);
+    background: #e89bb0;
     border: none;
     color: white;
     padding: 10px 14px;
     border-radius: 15px;
     cursor: pointer;
     font-weight: 600;
-    transition: transform 0.2s, opacity 0.2s;
 }
 
 .floating-nav button:hover {
     opacity: 0.85;
-    transform: scale(1.05);
 }
 
 /* ---------------- HOME ---------------- */
@@ -52,7 +50,7 @@ body {
 }
 
 .home-card {
-    background: linear-gradient(145deg, #fff7f2, #ffe9e2);
+    background: #fff7f2;
     padding: 40px;
     max-width: 700px;
     width: 90%;
@@ -94,19 +92,17 @@ body {
 }
 
 .menu button {
-    background: linear-gradient(135deg, #f4a6b8, #e89bb0);
+    background: #f4a6b8;
     color: white;
     border: none;
     padding: 10px 18px;
     border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
 }
 
 .menu button:hover {
     opacity: 0.85;
-    transform: scale(1.05);
 }
 
 /* ---------------- CONTENT ---------------- */
@@ -123,13 +119,12 @@ body {
 }
 
 .content p {
-    background: linear-gradient(145deg, #fff7f2, #ffe9e2);
+    background: #fff7f2;
     padding: 15px;
     margin: 20px auto;
     max-width: 800px;
     border-radius: 14px;
     border: 2px solid #d2b8a3;
-    line-height: 1.6;
 }
 
 /* ---------------- GALLERY ---------------- */
@@ -144,22 +139,17 @@ body {
 .gallery-img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* ensures mixed landscape/portrait fits nicely */
     border-radius: 14px;
     border: 2px solid #d2b8a3;
     display: block;
-    transition: transform 0.2s;
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
 }
 
 /* ---------------- GUESTBOOK ---------------- */
 .guestbook {
     max-width: 500px;
     margin: auto;
-    background: linear-gradient(135deg, #f3d6c6, #f8b8c8);
+    background: #f3d6c6;
     padding: 20px;
     border-radius: 20px;
     border: 2px solid #d2b8a3;
@@ -168,7 +158,7 @@ body {
 .guestbook input {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin: 6px 0;
     border-radius: 10px;
     border: 2px solid #d2b8a3;
 }
@@ -179,28 +169,25 @@ body {
     margin-top: 10px;
     border-radius: 20px;
     border: none;
-    background: linear-gradient(135deg, #e89bb0, #f4a6b8);
+    background: #e89bb0;
     color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
-}
-
-.guestbook button:hover {
-    opacity: 0.85;
-    transform: scale(1.05);
 }
 
 .guestbook p {
     margin-top: 10px;
     font-size: 0.95rem;
-    text-align: left;
 }
 
 /* ---------------- MEDIA QUERIES ---------------- */
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
+    }
+
+    p {
+        width: 90%;
     }
 
     .home-card {
@@ -210,10 +197,5 @@ body {
     .menu button {
         padding: 8px 14px;
         font-size: 0.95rem;
-    }
-
-    .floating-nav {
-        top: 10px;
-        right: 10px;
     }
 }
