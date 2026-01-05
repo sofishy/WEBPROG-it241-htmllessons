@@ -4,55 +4,42 @@
     <meta charset="UTF-8">
     <title>Sofia's Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/css-grid.css">
-
-    <!-- Vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- FLOATING NAV -->
 <div class="floating-nav">
     <button onclick="goToSection('home')">Home</button>
     <button onclick="goToSection('about')">About</button>
     <button onclick="goToSection('gallery')">Gallery</button>
     <button onclick="goToSection('guestbook')">Guestbook</button>
+    <button onclick="goToSection('resources')">Resources</button>
 </div>
 
-<!-- HOME SECTION -->
 <section id="home" class="home">
     <div class="home-card">
-
         <div class="welcome-text">
             <h1>
-                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
+                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sparkle">
                 My Profile
-                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870">
+                <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sparkle">
             </h1>
-
-            <p class="tagline">
-                Welcome to Sofishy's web!
-            </p>
+            <p class="tagline">Welcome to Sofishy's web!</p>
         </div>
-
         <div class="menu">
             <button onclick="goToSection('about')">About Me</button>
             <button onclick="goToSection('gallery')">Picture Gallery</button>
             <button onclick="goToSection('guestbook')">Guestbook</button>
-            <button onclick="location.href='resources.html'">Resources</button>
+            <button onclick="goToSection('resources')">Resources</button>
         </div>
-
     </div>
 </section>
 
-<!-- ABOUT SECTION -->
 <section id="about" class="content">
     <h2>About Me</h2>
     <p>I am Iane Sofia Francheska Padua, an IT student at Asia Pacific College.</p>
 
-    <h2>Education / Achievements</h2>
+    <h3>Education / Achievements</h3>
     <p>
         Graduated from Pasay City South High School<br>
         Graduated with High Honors<br>
@@ -60,94 +47,46 @@
         Best Research Group in Physical Science
     </p>
 
-    <h2>IT Experience</h2>
-    <p>
-        Python Programming<br>
-        Basic Networking<br>
-        UI / UX Designing
-    </p>
+    <h3>IT Experience</h3>
+    <p>Python Programming | Basic Networking | UI/UX Designing</p>
 
-    <h2>Hobbies & Interests</h2>
-    <p>
-        Watching sitcoms and dramas<br>
-        Playing instruments<br>
-        Crocheting
-    </p>
-
-    <h2>Goals in Life</h2>
-    <p>
-        My goal is to become successful in the IT field and build a stable future.
-    </p>
+    <h3>Hobbies & Interests</h3>
+    <p>Watching sitcoms and dramas, Playing instruments, and Crocheting.</p>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery" class="content">
     <h2>Picture Gallery</h2>
-
-    <div id="gallery-app" class="container">
-        <img v-for="img in images" :src="'images/' + img" class="gallery-img" :alt="'Profile image'">
+    <div class="container">
+        <img src="images/ako.jpg" class="gallery-img" alt="Profile 1">
+        <img src="images/babies.jpg" class="gallery-img" alt="Profile 2">
+        <img src="images/dog.jpg" class="gallery-img" alt="Profile 3">
+        <img src="images/fam.jpg" class="gallery-img" alt="Profile 4">
+        <img src="images/mom.jpg" class="gallery-img" alt="Profile 5">
     </div>
 </section>
 
-<!-- GUESTBOOK -->
 <section id="guestbook" class="content">
     <h2>Guestbook</h2>
-
-    <div id="guestbook-app" class="guestbook">
-        <input type="text" v-model="name" placeholder="Your name">
-        <input type="text" v-model="message" placeholder="Your message">
-        <br><br>
-        <button @click="addEntry">Submit</button>
-
-        <p v-for="entry in entries">
-            <strong>{{ entry.name }}:</strong> {{ entry.message }}
-        </p>
+    <div class="guestbook-form">
+        <input type="text" placeholder="Your name">
+        <textarea placeholder="Your message" rows="4" style="width: 100%; border-radius: 10px; padding: 10px; border: 2px solid #d2b8a3; margin-top: 10px;"></textarea>
+        <button type="button" onclick="alert('Form feature coming soon!')">Submit</button>
     </div>
 </section>
 
-<!-- JS -->
+<section id="resources" class="content">
+    <h2>Resources & Documentation</h2>
+    <div class="resource-box">
+        <p><strong>Images/Gifs:</strong> <a href="https://supplies.ju.mp/">Ju.mp Assets</a></p>
+        <p><strong>Fonts:</strong> Segoe UI System Stack</p>
+        <p><strong>AI Assistance (Rubric #12):</strong> <a href="[PASTE YOUR CHAT LINK HERE]">Link to AI Query & Response</a></p>
+    </div>
+</section>
+
 <script>
 function goToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
-
-// Vue Gallery Component
-Vue.createApp({
-    data() {
-        return {
-            images: [
-                'ako.jpg',
-                'babies.jpg',
-                'dog.jpg',
-                'fam.jpg',
-                'mom.jpg'
-            ]
-        }
-    }
-}).mount('#gallery-app');
-
-// Vue Guestbook
-Vue.createApp({
-    data() {
-        return {
-            name: "",
-            message: "",
-            entries: []
-        }
-    },
-    methods: {
-        addEntry() {
-            if (this.name && this.message) {
-                this.entries.push({
-                    name: this.name,
-                    message: this.message
-                });
-                this.name = "";
-                this.message = "";
-            }
-        }
-    }
-}).mount('#guestbook-app');
 </script>
 
 </body>
