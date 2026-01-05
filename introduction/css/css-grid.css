@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background: #fde2e4; /* soft pink */
+    background: #fde2e4;
     color: #5a3a2e;
     text-align: center;
 }
@@ -138,6 +138,8 @@ body {
 
 .gallery-img {
     width: 100%;
+    height: 200px;
+    object-fit: cover; /* ensures mixed landscape/portrait fits nicely */
     border-radius: 14px;
     border: 2px solid #d2b8a3;
     display: block;

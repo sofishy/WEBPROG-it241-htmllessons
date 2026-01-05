@@ -85,7 +85,7 @@
     <h2>Picture Gallery</h2>
 
     <div id="gallery-app" class="container">
-        <img v-for="img in images" :src="img" class="gallery-img" :alt="'Profile image'">
+        <img v-for="img in images" :src="'images/' + img" class="gallery-img" :alt="'Profile image'">
     </div>
 </section>
 
@@ -116,12 +116,11 @@ Vue.createApp({
     data() {
         return {
             images: [
-                'images/stewie.png',
-                'images/stewie.png',
-                'images/stewie.png',
-                'images/stewie.png',
-                'images/stewie.png',
-                'images/stewie.png'
+                'ako.jpg',
+                'babies.jpg',
+                'dog.jpg',
+                'fam.jpg',
+                'mom.jpg'
             ]
         }
     }
