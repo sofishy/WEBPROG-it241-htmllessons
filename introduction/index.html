@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<!-- HOME / LANDING SCREEN -->
+<!-- FLOATING NAVIGATION -->
+<div class="floating-nav">
+    <button onclick="goToSection('home')">Home</button>
+    <button onclick="goToSection('about')">About</button>
+    <button onclick="goToSection('gallery')">Gallery</button>
+    <button onclick="goToSection('guestbook')">Guestbook</button>
+</div>
+
+<!-- HOME / LANDING -->
 <section class="home" id="home">
     <div class="home-card">
         <h1>
@@ -18,22 +26,23 @@
         </h1>
 
         <p class="tagline">
-            A personal profile website showcasing who I am and what I do.
+            Welcome to my personal profile website.
         </p>
 
         <div class="menu">
             <button onclick="goToSection('about')">About Me</button>
-            <button onclick="goToSection('gallery')">Gallery</button>
+            <button onclick="goToSection('gallery')">Picture Gallery</button>
             <button onclick="goToSection('guestbook')">Guestbook</button>
             <button onclick="location.href='resources.html'">Resources</button>
         </div>
     </div>
 </section>
 
+<!-- MAIN CONTENT -->
 <section class="content">
 
 <h2 id="about">About Me</h2>
-<p>Hi! I'm Iane Sofia Francheska Padua. I'm a student from BSIT241.</p>
+<p>Hi! I'm Nairb Ackillis Varona. I'm a student from BSIT241.</p>
 
 <h2>Education / Achievements</h2>
 <p>
@@ -87,11 +96,10 @@ Crocheting
 
 <script>
 function goToSection(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: 'smooth'
-    });
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
+/* VUE GALLERY */
 Vue.createApp({
     data() {
         return {
@@ -104,12 +112,13 @@ Vue.createApp({
     }
 }).mount('#galleryApp')
 
+/* VUE GUESTBOOK WITH LOCAL STORAGE */
 Vue.createApp({
     data() {
         return {
             name: '',
             comment: '',
-            entries: []
+            entries: JSON.parse(localStorage.getItem('guestbook')) || []
         }
     },
     methods: {
@@ -119,6 +128,7 @@ Vue.createApp({
                     name: this.name,
                     comment: this.comment
                 });
+                localStorage.setItem('guestbook', JSON.stringify(this.entries));
                 this.name = '';
                 this.comment = '';
             }
