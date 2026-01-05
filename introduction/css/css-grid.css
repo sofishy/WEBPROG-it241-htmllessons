@@ -60,12 +60,6 @@ body {
 }
 
 /* ---------------- WELCOME TEXT ---------------- */
-.welcome-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .welcome-text h1 {
     color: #e89bb0;
     font-size: 2.5rem;
@@ -79,7 +73,6 @@ body {
 
 .tagline {
     font-size: 1.1rem;
-    color: #5a3a2e;
     margin-bottom: 20px;
 }
 
@@ -108,12 +101,10 @@ body {
 /* ---------------- CONTENT ---------------- */
 .content {
     padding: 60px 15px;
-    background: #fde2e4;
 }
 
 .content h2 {
     color: #e89bb0;
-    text-align: center;
     margin-top: 50px;
     text-decoration: underline;
 }
@@ -139,10 +130,9 @@ body {
 .gallery-img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* ensures mixed landscape/portrait fits nicely */
+    object-fit: cover;
     border-radius: 14px;
     border: 2px solid #d2b8a3;
-    display: block;
 }
 
 /* ---------------- GUESTBOOK ---------------- */
@@ -155,7 +145,8 @@ body {
     border: 2px solid #d2b8a3;
 }
 
-.guestbook input {
+.guestbook input,
+.guestbook button {
     width: 100%;
     padding: 10px;
     margin: 6px 0;
@@ -164,20 +155,9 @@ body {
 }
 
 .guestbook button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 20px;
-    border: none;
     background: #e89bb0;
     color: white;
     font-weight: 600;
-    cursor: pointer;
-}
-
-.guestbook p {
-    margin-top: 10px;
-    font-size: 0.95rem;
 }
 
 /* ---------------- MEDIA QUERIES ---------------- */
@@ -186,16 +166,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    p {
-        width: 90%;
-    }
-
     .home-card {
         padding: 20px;
-    }
-
-    .menu button {
-        padding: 8px 14px;
-        font-size: 0.95rem;
     }
 }
