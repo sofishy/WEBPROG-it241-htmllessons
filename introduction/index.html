@@ -8,27 +8,30 @@
 </head>
 <body>
 
-<!-- HOME / LANDING SECTION -->
-<section class="home">
-    <h1>
-        <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
-        My Profile Website
-        <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
-    </h1>
+<!-- HOME / LANDING SCREEN -->
+<section class="home" id="home">
+    <div class="home-card">
+        <h1>
+            <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="">
+            My Profile
+            <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="">
+        </h1>
 
-    <p class="intro">
-        Welcome! Choose a section below to learn more about me.
-    </p>
+        <p class="tagline">
+            A personal profile website showcasing who I am and what I do.
+        </p>
 
-    <div class="home-buttons">
-        <a href="#about">About Me</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#guestbook">Guestbook</a>
-        <a href="resources.html">Resources</a>
+        <div class="menu">
+            <button onclick="goToSection('about')">About Me</button>
+            <button onclick="goToSection('gallery')">Gallery</button>
+            <button onclick="goToSection('guestbook')">Guestbook</button>
+            <button onclick="location.href='resources.html'">Resources</button>
+        </div>
     </div>
 </section>
 
-<!-- ABOUT -->
+<section class="content">
+
 <h2 id="about">About Me</h2>
 <p>Hi! I'm Iane Sofia Francheska Padua. I'm a student from BSIT241.</p>
 
@@ -60,13 +63,11 @@ Crocheting
 <h2>Goals In Life / Dream</h2>
 <p>My dream is to become successful in the IT field and build a stable future.</p>
 
-<!-- GALLERY -->
 <h2 id="gallery">Picture Gallery</h2>
 <div id="galleryApp" class="container">
-    <img v-for="image in images" :src="image" class="gallery-img" alt="gallery image">
+    <img v-for="image in images" :src="image" class="gallery-img" alt="">
 </div>
 
-<!-- GUESTBOOK -->
 <h2 id="guestbook">Guestbook</h2>
 <div id="guestbookApp" class="guestbook">
     <input v-model="name" placeholder="Your name">
@@ -80,9 +81,17 @@ Crocheting
     </ul>
 </div>
 
+</section>
+
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <script>
+function goToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
 Vue.createApp({
     data() {
         return {
@@ -109,9 +118,9 @@ Vue.createApp({
                 this.entries.push({
                     name: this.name,
                     comment: this.comment
-                })
-                this.name = ''
-                this.comment = ''
+                });
+                this.name = '';
+                this.comment = '';
             }
         }
     }
