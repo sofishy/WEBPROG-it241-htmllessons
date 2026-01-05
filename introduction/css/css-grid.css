@@ -7,7 +7,7 @@
 body {
     margin: 0;
     background: #fde2e4; /* soft pink */
-    color: #5a3a2e; /* dark brown text */
+    color: #5a3a2e;
     text-align: center;
 }
 
@@ -22,13 +22,13 @@ body {
     gap: 10px;
     padding: 12px;
     border-radius: 20px;
-    background: #f3d6c6; /* light brown */
+    background: #f3d6c6;
     border: 2px solid #d2b8a3;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .floating-nav button {
-    background: #e89bb0; /* medium pink */
+    background: #e89bb0;
     border: none;
     color: white;
     padding: 10px 14px;
@@ -50,7 +50,7 @@ body {
 }
 
 .home-card {
-    background: #fff7f2; /* soft white-pink */
+    background: #fff7f2;
     padding: 40px;
     max-width: 700px;
     width: 90%;
@@ -105,7 +105,7 @@ body {
     opacity: 0.85;
 }
 
-/* ---------------- CONTENT SECTIONS ---------------- */
+/* ---------------- CONTENT ---------------- */
 .content {
     padding: 60px 15px;
     background: #fde2e4;
@@ -173,7 +173,6 @@ body {
     cursor: pointer;
 }
 
-/* Guestbook Entries */
 .guestbook p {
     margin-top: 10px;
     font-size: 0.95rem;

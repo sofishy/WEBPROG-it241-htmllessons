@@ -84,13 +84,8 @@
 <section id="gallery" class="content">
     <h2>Picture Gallery</h2>
 
-    <div class="container">
-        <img src="stewie.png" class="gallery-img">
-        <img src="stewie.png" class="gallery-img">
-        <img src="stewie.png" class="gallery-img">
-        <img src="stewie.png" class="gallery-img">
-        <img src="stewie.png" class="gallery-img">
-        <img src="stewie.png" class="gallery-img">
+    <div id="gallery-app" class="container">
+        <img v-for="img in images" :src="img" class="gallery-img" :alt="'Profile image'">
     </div>
 </section>
 
@@ -98,7 +93,7 @@
 <section id="guestbook" class="content">
     <h2>Guestbook</h2>
 
-    <div id="app" class="guestbook">
+    <div id="guestbook-app" class="guestbook">
         <input type="text" v-model="name" placeholder="Your name">
         <input type="text" v-model="message" placeholder="Your message">
         <br><br>
@@ -116,6 +111,23 @@ function goToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
+// Vue Gallery Component
+Vue.createApp({
+    data() {
+        return {
+            images: [
+                'images/stewie.png',
+                'images/stewie.png',
+                'images/stewie.png',
+                'images/stewie.png',
+                'images/stewie.png',
+                'images/stewie.png'
+            ]
+        }
+    }
+}).mount('#gallery-app');
+
+// Vue Guestbook
 Vue.createApp({
     data() {
         return {
@@ -136,7 +148,7 @@ Vue.createApp({
             }
         }
     }
-}).mount("#app");
+}).mount('#guestbook-app');
 </script>
 
 </body>
