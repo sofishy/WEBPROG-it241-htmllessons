@@ -8,22 +8,27 @@
 </head>
 <body>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#guestbook">Guestbook</a>
-    <a href="resources.html">Resources</a>
-</nav>
+<!-- HOME / LANDING SECTION -->
+<section class="home">
+    <h1>
+        <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
+        My Profile Website
+        <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
+    </h1>
 
-<h1>
-    <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
-    Profile Web Page
-    <img class="sticker" src="https://supplies.ju.mp/assets/images/gallery05/9747a42c.gif?v=1c1ba870" alt="sticker">
-</h1>
+    <p class="intro">
+        Welcome! Choose a section below to learn more about me.
+    </p>
 
-<img class="decor" src="https://supplies.ju.mp/assets/images/gallery05/a1c6c4c1.gif?v=1c1ba870" alt="decor">
-<img class="decor" src="https://supplies.ju.mp/assets/images/gallery05/a1c6c4c1.gif?v=1c1ba870" alt="decor">
+    <div class="home-buttons">
+        <a href="#about">About Me</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#guestbook">Guestbook</a>
+        <a href="resources.html">Resources</a>
+    </div>
+</section>
 
+<!-- ABOUT -->
 <h2 id="about">About Me</h2>
 <p>Hi! I'm Iane Sofia Francheska Padua. I'm a student from BSIT241.</p>
 
@@ -55,11 +60,13 @@ Crocheting
 <h2>Goals In Life / Dream</h2>
 <p>My dream is to become successful in the IT field and build a stable future.</p>
 
+<!-- GALLERY -->
 <h2 id="gallery">Picture Gallery</h2>
 <div id="galleryApp" class="container">
     <img v-for="image in images" :src="image" class="gallery-img" alt="gallery image">
 </div>
 
+<!-- GUESTBOOK -->
 <h2 id="guestbook">Guestbook</h2>
 <div id="guestbookApp" class="guestbook">
     <input v-model="name" placeholder="Your name">
