@@ -91,17 +91,44 @@
 </section>
 
 <!-- GUESTBOOK (STATIC PLACEHOLDER) -->
-<section id="guestbook" class="content">
-    <h2>Guestbook</h2>
+<script>
+function addComment() {
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
 
-    <div class="guestbook">
-        <input type="text" placeholder="Your name" disabled>
-        <input type="text" placeholder="Your message" disabled>
-        <button disabled>Submit</button>
+    if (name === "" || message === "") {
+        alert("Please fill out both fields!");
+        return;
+    }
 
-        <p><em>Drop you comments and suggestions!</em></p>
-    </div>
-</section>
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    comments.push({ name, message });
+
+    localStorage.setItem("comments", JSON.stringify(comments));
+
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+
+    displayComments();
+}
+
+function displayComments() {
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+    const commentsDiv = document.getElementById("comments");
+
+    commentsDiv.innerHTML = "";
+
+    comments.forEach(comment => {
+        const p = document.createElement("p");
+        p.innerHTML = `<strong>${comment.name}:</strong> ${comment.message}`;
+        commentsDiv.appendChild(p);
+    });
+}
+
+// Load comments when page opens
+displayComments();
+</script>
 
 <!-- JS -->
 <script>
